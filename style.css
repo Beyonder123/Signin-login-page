@@ -1,201 +1,267 @@
-/* POPPINS FONT */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*{  
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body{
+
+body {
     background: url("1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    overflow: hidden;
+    overflow-x: hidden;
+    backdrop-filter: blur(5px);
 }
-.main{
+
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 110vh;
-    background: rgba(39, 39, 39, 0.4);
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
 }
-.nav{
+
+.nav {
     position: fixed;
     top: 0;
-    display: flex;
-    justify-content: space-around;
     width: 100%;
-    height: 100px;
-    line-height: 100px;
-    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     z-index: 100;
+    transition: background 0.3s ease;
 }
-.nav-logo p{
-    color: white;
-    font-size: 25px;
-    font-weight: 600;
+
+.nav:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
-span{
+
+.nav-logo p {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+span {
     color: orange;
     font-size: 32px;
 }
-.nav-menu ul{
+
+.nav-menu ul {
     display: flex;
+    margin-left: auto;
 }
-.nav-menu ul li{
-    list-style-type: none;
+
+.nav-menu ul li {
+    list-style: none;
 }
-.nav-menu ul li .link{
+
+ul li .link {
+    padding-left: 70px;
+}
+
+.nav-menu ul li .link {
     text-decoration: none;
     font-weight: 500;
     color: #fff;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
     margin: 0 25px;
+    position: relative;
 }
-ul li .link:hover{
-    color: rgb(229, 120, 31);
+
+.nav-menu ul li .link:after {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00d1b2;
+    transition: width 0.3s ease;
 }
-.nav-button .btn{
-    width: 130px;
-    height: 40px;
-    font-weight: 500;
-    background: rgba(255, 255, 255, 0.4);
+
+.nav-menu ul li .link:hover:after {
+    width: 100%;
+}
+
+.nav-button .btn {
+    width: 150px;
+    height: 45px;
+    font-weight: 600;
+    background: rgba(0, 209, 178, 0.8);
     border: none;
     border-radius: 30px;
+    color: #000;
     cursor: pointer;
-    transition: .3s ease;
+    transition: background 0.3s ease;
 }
-.btn:hover{
-    background: rgba(255, 255, 255, 0.3);
+
+.btn:hover {
+    background: rgba(0, 209, 178, 1);
+    box-shadow: 0px 5px 15px rgba(0, 209, 178, 0.6);
 }
-#registerBtn{
+
+#registerBtn {
     margin-left: 15px;
 }
-.btn.white-btn{
-    background: rgba(255, 255, 255, 0.7);
+
+.btn.white-btn {
+    background: #fff;
+    color: #000;
 }
-.btn.btn.white-btn:hover{
-    background: rgba(255, 255, 255, 0.5);
+
+.btn.white-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
 }
-.nav-menu-btn{
+
+.nav-menu-btn {
     display: none;
 }
-.form-box{
+
+
+
+.form-box {
     position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 512px;
-    height: 420px;
-    overflow: hidden;
-    z-index: 2;
+    align-items: center;
+    width: 550px;
+    height: 550px;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
 }
-.login-container{
+
+
+.login-container, .register-container {
     position: absolute;
-    left: 4px;
-    width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     transition: .5s ease-in-out;
+    padding: 0 20px;
 }
-.register-container{
-    position: absolute;
-    right: -520px;
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    transition: .5s ease-in-out;
+
+.register-container {
+    display: none;
 }
-.top span{
+
+.top span {
     color: #fff;
     font-size: small;
-    padding: 10px 0;
+    padding: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
-.top span a{
+
+.top span a {
     font-weight: 500;
-    color: #fff;
+    color: #00d4aa;
     margin-left: 5px;
 }
-header{
+
+header {
     color: #fff;
-    font-size: 30px;
+    font-size: 28px;
     text-align: center;
-    padding: 10px 0 30px 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+    padding: 20px 0;
 }
-.two-forms{
-    display: flex;
-    gap: 10px;
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
 }
-.input-field{
-    font-size: 15px;
+
+.input-field {
+    font-size: 16px;
     background: rgba(255, 255, 255, 0.2);
     color: #fff;
     height: 50px;
     width: 100%;
-    padding: 0 10px 0 45px;
+    padding-left: 50px;
     border: none;
     border-radius: 30px;
     outline: none;
     transition: .2s ease;
 }
-.input-field:hover, .input-field:focus{
+
+.input-field:focus {
     background: rgba(255, 255, 255, 0.25);
+    border: 1px solid #00d1b2;
 }
-::-webkit-input-placeholder{
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
     color: #fff;
+    font-size: 20px;
 }
-.input-box i{
-    position: relative;
-    top: -35px;
-    left: 17px;
-    color: #fff;
-}
-.submit{
-    font-size: 15px;
-    font-weight: 500;
+
+.submit {
+    font-size: 16px;
+    font-weight: 600;
     color: black;
-    height: 45px;
+    height: 50px;
     width: 100%;
     border: none;
     border-radius: 30px;
-    outline: none;
-    background: rgba(255, 255, 255, 0.7);
+    background: #00d1b2;
     cursor: pointer;
-    transition: .3s ease-in-out;
+    transition: background 0.3s ease;
 }
-.submit:hover{
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+
+.submit:hover {
+    background: rgba(0, 209, 178, 0.9);
+    box-shadow: 0px 5px 10px rgba(0, 209, 178, 0.6);
 }
-.two-col{
+
+.two-col {
     display: flex;
     justify-content: space-between;
     color: #fff;
-    font-size: small;
+    font-size: 14px;
     margin-top: 10px;
 }
-.two-col .one{
+
+.two-col .one {
     display: flex;
-    gap: 5px;
+    align-items: center;
 }
-.two label a{
+
+.two-col label a {
     text-decoration: none;
-    color: #fff;
+    color: #00d1b2;
 }
-.two label a:hover{
+
+.two-col label a:hover {
     text-decoration: underline;
 }
-@media only screen and (max-width: 786px){
-    .nav-button{
+
+
+@media (max-width: 786px) {
+    .nav-button {
         display: none;
     }
-    .nav-menu.responsive{
+
+    .nav-menu.responsive {
         top: 100px;
     }
-    .nav-menu{
+
+    .nav-menu {
         position: absolute;
         top: -800px;
         display: flex;
@@ -206,40 +272,53 @@ header{
         backdrop-filter: blur(20px);
         transition: .3s;
     }
-    .nav-menu ul{
+
+    .nav-menu ul {
         flex-direction: column;
         text-align: center;
     }
-    .nav-menu-btn{
+
+    .nav-menu-btn {
         display: block;
     }
-    .nav-menu-btn i{
+
+    .nav-menu-btn i {
         font-size: 25px;
         color: #fff;
         padding: 10px;
         background: rgba(255, 255, 255, 0.2);
         border-radius: 50%;
         cursor: pointer;
-        transition: .3s;
     }
-    .nav-menu-btn i:hover{
-        background: rgba(255, 255, 255, 0.15);
+
+    .form-box {
+        width: 100%;
+        height: auto;
+    }
+
+    .register-container, .login-container {
+        padding: 0 20px;
+        left: 0;
+        right: 0;
     }
 }
-@media only screen and (max-width: 540px) {
-    .main{
+
+@media (max-width: 540px) {
+    .main {
         min-height: 100vh;
     }
-    .form-box{
-        width: 100%;
-        height: 500px;
+
+    .form-box {
+        width: 90%;
+        height: auto;
     }
-    .register-container, .login-container{
+
+    .register-container, .login-container {
         width: 100%;
-        padding: 0 20px;
+        padding: 0 10px;
     }
-    .register-container .two-forms{
+
+    .two-forms {
         flex-direction: column;
-        gap: 0;
     }
 }
