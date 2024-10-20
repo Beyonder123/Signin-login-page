@@ -101,18 +101,21 @@
     </div>
 </div>   
 
+<div class="nav-menu-btn">
+    <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+</div>
+
 <script>
-   
     function myMenuFunction() {
-     var i = document.getElementById("navMenu");
-     if(i.className === "nav-menu") {
-         i.className += " responsive";
-     } else {
-         i.className = "nav-menu";
-     }
+        var i = document.querySelector(".nav-menu");
+        if(i.classList.contains("responsive")) {
+            i.classList.remove("responsive");
+        } else {
+            i.classList.add("responsive");
+        }
     }
-  
- </script>
+</script>
+
  <script>
      var a = document.getElementById("loginBtn");
      var b = document.getElementById("registerBtn");

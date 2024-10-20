@@ -257,29 +257,55 @@ header {
         display: none;
     }
 
-    .nav-menu.responsive {
-        top: 100px;
-    }
-
     .nav-menu {
         position: absolute;
-        top: -800px;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        height: 100vh; 
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(20px);
         display: flex;
         justify-content: center;
-        background: rgba(255, 255, 255, 0.2);
-        width: 100%;
-        height: 90vh;
-        backdrop-filter: blur(20px);
-        transition: .3s;
+        align-items: center; 
+        flex-direction: column;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+
+    .nav-menu.responsive {
+        transform: translateY(0);
     }
 
     .nav-menu ul {
-        flex-direction: column;
-        text-align: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-menu ul li {
+        margin: 15px 0;
+    }
+
+    .nav-menu ul li a {
+        font-size: 18px;
+        text-decoration: none;
+        color: white; 
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    .nav-menu ul li a:hover {
+        color: #f0f0f0; 
     }
 
     .nav-menu-btn {
         display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 101; 
     }
 
     .nav-menu-btn i {
@@ -293,7 +319,7 @@ header {
 
     .form-box {
         width: 100%;
-        height: auto;
+        height: 500px;
     }
 
     .register-container, .login-container {
@@ -310,7 +336,7 @@ header {
 
     .form-box {
         width: 90%;
-        height: auto;
+        height: 500px;
     }
 
     .register-container, .login-container {
